@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="Fiap.UWP.Final.View.LoginView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fiap.UWP.Final.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Margin="30,10,30,8" Background="White">
+            <TextBlock Text="Entrar" HorizontalAlignment="Left" Margin="0,30,0,10" Foreground="Black" FontSize="20"/>
+            <TextBlock Text="Já sou cadastrado" HorizontalAlignment="Left" Foreground="#1161A6" FontSize="20"/>
+        
+            <!--UserName-->
+            <TextBlock Text="E-mail" Foreground="Black" FontSize="16" Margin="0,10,10,0" HorizontalAlignment="Left"/>
+            <TextBox  BorderBrush="LightGray" Name="txtUsuario" Margin="0,10,0,0" MinWidth="350" HorizontalAlignment="Stretch" />
+
+            <!--Password-->
+            <TextBlock  Foreground="Black" Text="Senha" Margin="0,10,10,0" FontSize="16" HorizontalAlignment="Left"/>
+            <PasswordBox BorderBrush="LightGray" Name="txtPassWord" Margin="0,10,0,0" MinWidth="350" HorizontalAlignment="Stretch" />
+
+            <!--Login Button-->
+             <Button Content="Entrar" HorizontalAlignment="Stretch" Margin="0,20,0,0" Height="35" Foreground="White" FontSize="16" Background="#1161A6" Name="btnAuthetication" Click="btnAuthetication_Click" />
+
+            <!--  Registration Button-->
+            <Button Content="Cadastrar" HorizontalAlignment="Stretch" Margin="0,10"  Background="#079C28" Foreground="White" FontSize="16" Height="35" Name="SignUp" Click="SignUp_Click"/>
+
+        </StackPanel>
+
+    </Grid>
+</Page>

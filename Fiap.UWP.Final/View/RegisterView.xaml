@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="Fiap.UWP.Final.View.RegisterView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Fiap.UWP.Final.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    xmlns:ViewModels="using:Fiap.UWP.Final.ViewModel">
+
+
+    <Page.DataContext>
+        <ViewModels:UsuarioViewModel />
+    </Page.DataContext>
+    
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid Margin="20,0,20,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Title-->
+
+            <TextBlock Text="Cadastro de Usuário" Grid.Row="0" FontSize="20" Margin="0,40,0,10"  Foreground="Black"/>
+
+            <!--UserName-->
+
+            <TextBlock Text="Usuário" Grid.Row="1" Foreground="Black" VerticalAlignment="Center"  Margin="0,10,0,0"/>
+
+            <TextBox Text="{x:Bind UsuarioViewModel.Usuario.Nome, Mode=TwoWay}" Name="TxtUserName" Height="14" FontSize="14" VerticalAlignment="Bottom" BorderBrush="LightGray" Grid.Row="1" Margin="100,10,0,0" />
+
+
+
+            <!--Password-->
+
+            <TextBlock Text="Senha" Grid.Row="2" Margin="0,10,0,0" Foreground="Black" VerticalAlignment="Center"/>
+
+            <PasswordBox Name="TxtPwd" Height="14" FontSize="14"  BorderBrush="LightGray" Grid.Row="2" Margin="100,10,0,0" />
+
+
+
+            <!--Address-->
+
+            <TextBlock Text="Idade" Grid.Row="3" Margin="0,10,0,0" VerticalAlignment="Center" Foreground="Black" />
+
+            <TextBox Text="{x:Bind UsuarioViewModel.Usuario.Idade, Mode=TwoWay}" Name="TxtAge" Height="14" FontSize="14" BorderBrush="LightGray" Grid.Row="3" Margin="100,10,0,0" />
+
+
+
+            <!--Gender-->
+
+            <TextBlock Text="Sexo" Grid.Row="4" Margin="0,10,0,0" Foreground="Black" VerticalAlignment="Center" />
+            <!--<RadioButton IsChecked="{Binding UsuarioViewModel.SexoMas, Mode=TwoWay}" Name="OpMaculino" Background="White"  Content="Masculino" Grid.Row="4" Margin="100,10,0,0" Foreground="Black" />
+            <RadioButton IsChecked="{Binding UsuarioViewModel.SexoFem, Mode=TwoWay}" Name="OpFeminino"  Background="White" Content="Feminino" Grid.Row="4" Margin="200,10,0,0" Foreground="Black" />-->
+
+
+            <ComboBox Name="cmbSexo"
+                    Grid.Row="4" Margin="100,10,0,0" Foreground="Black" 
+                    ItemsSource="{Binding Genders, Mode=TwoWay}"
+                    DisplayMemberPath="Descricao"
+                      SelectedValue="{Binding SelectedGender, Mode=TwoWay}"/>
+                    <!--SelectedValue="{Binding SelectedGender, Mode=TwoWay}"/>-->
+
+            <!--<ListView Header="Classic" ItemsSource="{Binding UsuarioViewModel.Genders}" x:Name="classic"
+                  SelectedItem="{Binding SelectedClassicItem, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Vertical" Height="50">
+                            <TextBlock Text="{Binding Gender.Codigo}"/>
+                            <TextBlock Text="{Binding Gender.Descricao}"/>
+                        </StackPanel>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>-->
+            
+            <!--Phone Number-->
+
+            <TextBlock Text="UF" Grid.Row="5" Margin="0,10,0,0" Foreground="Black" VerticalAlignment="Center" />
+
+            <ComboBox ItemsSource="{x:Bind Ufs}" SelectedItem="{x:Bind Ufs}"  Grid.Row="5" 
+                      Margin="100,10,0,0" VerticalAlignment="Bottom" 
+                      BorderBrush="LightGray"
+                      >
+
+            </ComboBox>
+
+
+            <!--Email-->
+
+            <TextBlock Text="E-mail" Grid.Row="6" Margin="0,10,0,0" Foreground="Black" VerticalAlignment="Center"  />
+
+            <TextBox Text="{x:Bind UsuarioViewModel.Usuario.Email, Mode=TwoWay}" Name="TxtEmail" Height="14" FontSize="14" BorderBrush="LightGray" Grid.Row="6" Margin="100,10,0,0" />
+
+            <!--Submit Button-->
+
+            <Button Click="{x:Bind UsuarioViewModel.Incluir}" BorderBrush="Transparent" Margin="0,20" Background="#1161A6" HorizontalAlignment="Stretch" Foreground="White" Content="Salvar" FontSize="16" Height="36" Name="BtnSubmit" Grid.Row="7"/>
+
+        </Grid>
+
+    </Grid>
+</Page>

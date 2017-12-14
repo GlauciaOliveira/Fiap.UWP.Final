@@ -1,5 +1,4 @@
-﻿using Fiap.UWP.Final.View;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -14,31 +13,18 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
+// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace Fiap.UWP.Final
+namespace Fiap.UWP.Final.View
 {
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class EventosView : Page
     {
-        Frame rootFrame = Window.Current.Content as Frame;
-
-        public MainPage()
+        public EventosView()
         {
             this.InitializeComponent();
         }
-
-        private void btnLogin_Click(object sender, RoutedEventArgs e)
-        {
-            rootFrame.Navigate(typeof(LoginView));
-        }
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
-        {
-            rootFrame.Navigate(typeof(RegisterView));
-        }
-
     }
 }

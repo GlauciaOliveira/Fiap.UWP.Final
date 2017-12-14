@@ -7,7 +7,45 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    
+    <Grid x:Name="contentPanel">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <!--<Button x:Name="btnBuscar" Click="btnBuscar_Click"
+        Background="#1161A6"
+        Height="100" MinWidth="25"
+                HorizontalAlignment="Stretch"
+                Margin="30,0,30,0">
+            <StackPanel>
+                <Image Source="Assets/lupa.png" Height="62"/>
+                <TextBlock Text="Photos" 
+                   HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Button>-->
+        <Button x:Name="btnLogin" Click="btnLogin_Click" Content="Login"
+            Margin="30,240,30,0"
+            MinWidth="250"
+            HorizontalAlignment="Stretch"
+            MinHeight="40"
+            FontFamily="verdana"
+            FontSize="14"
+            FontWeight="Bold"
+                Background="#1161A6"
+                Foreground="AliceBlue"
+            Grid.Row="0" />
+        <Button x:Name="btnRegister" Click="btnRegister_Click"  Content="Registrar"
+            Margin="30,-240,30,0"
+            MinWidth="250"
+            HorizontalAlignment="Stretch"
+            MinHeight="40"
+            FontFamily="verdana"
+            FontSize="14"
+            FontWeight="Bold"
+                Background="#079C28"
+                Foreground="AliceBlue"
+            Grid.Row="1"/>
     </Grid>
 </Page>
